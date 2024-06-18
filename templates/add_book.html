@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add a Book</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body>
+    {% include '/components/header.html' %}
+    <form style="min-height: 100%;" action="/add_book" method="POST">
+        <label for="title">Book Title</label>
+        <input id="title" type="text" name="title" placeholder="Enter the book title" required>
+        <br>
+        <label for="author">Author</label>
+        <input id="author" type="text" name="author" placeholder="Enter the author's name" required>
+        <br>
+        <label for="description">Description</label>
+        <textarea id="description" name="description" placeholder="Write a brief description of the book" required></textarea>
+        <br>
+        <label for="link">Link</label>
+        <input id="link" type="url" name="link" placeholder="Enter the book link">
+        <br>
+        <input type="submit" value="Add Book">
+    </form>
+    {% include '/components/footer.html' %}
+</body>
+</html>

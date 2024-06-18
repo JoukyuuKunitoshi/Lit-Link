@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body>
+    {% include '/components/header.html' %}
+    <form action="/register" method="POST">
+        <label for="username">Username</label>
+        <input id="username" type="text" name="username" placeholder="Create a username">
+        <br>
+        <label for="password">Password</label>
+        <input id="password" type="password" name="password" placeholder="Create a password">
+        <br>
+        <input type="submit" value="Register">
+    </form>
+    {% include '/components/footer.html' %}
+</body>
+</html>

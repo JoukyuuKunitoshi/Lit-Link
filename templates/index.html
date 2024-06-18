@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lit Link</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    {% include 'components/header.html' %}
+    <main>
+        <section>
+            <h2>Welcome to Lit Link</h2>
+            <p>Discover new books, share your favorite reads, and connect with fellow book enthusiasts.</p>
+            <p><a href="/register">Sign up</a> or <a href="/login">login</a> to start your book exchange journey.</p>
+        </section>
+    </main>
+    {% include 'components/footer.html' %}
+</body>
+</html>

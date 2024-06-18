@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Account</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body>
+    {% include '/components/header.html' %}
+    {% if username is defined %}
+        <p>Hello, {{ username }}! Here are your books:</p>
+        <table border="">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Description</th>
+                    <th>link</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for book in books %}
+                    <tr>
+                        <td>{{ book["title"] }}</td>
+                        <td>{{ book["author"] }}</td>
+                        <td>{{ book["description"] }}</td>
+                        <td>{{ book["link"] }}</td>
+                        <td>{{ book["date"] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+    <br>
+    <a href="/add_book"><button>Add a new book</button></a>
+    <a href="/"><button>Go to Home</button></a>
+    <a href="/logout"><button>Logout</button></a>
+    {% include '/components/footer.html' %}
+</body>
+</html>
